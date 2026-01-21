@@ -182,4 +182,15 @@ footer {
   h1 {
     text-align: center;
   }
+
+  .about h2 {
+    text-align: center;
+  }
+
+  .skills h2 {
+    text-align: center;
+  }
+  .projects h2 {
+    text-align: center;
+  }
 }
