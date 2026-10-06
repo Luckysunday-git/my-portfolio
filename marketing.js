@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const whatsappNumber = "2348118254967";
 
     // WhatsApp message
-    const whatsappMessage = `Hello Lucky,
+    const whatsappMessage = `Hello Lucky Sunday,
 
 I am interested in hiring you for a project.
 
