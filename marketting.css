@@ -472,6 +472,9 @@ footer p {
   .form-group input,
   .form-group select,
   .form-group textarea {
-    font-size: 25px;
+    font-size: 18px;
+  }
+  .btn {
+    font-size: 23px;
   }
 }
