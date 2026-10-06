@@ -452,11 +452,11 @@ footer p {
 
   .hero-buttons {
     flex-direction: column;
-    width: 90%;
+    width: 100%;
   }
 
   .btn {
-    width: 100%;
+    width: 80%;
     text-align: center;
   }
 
