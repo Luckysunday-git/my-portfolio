@@ -1,196 +1,477 @@
+/* ========================================
+   GLOBAL
+======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
 body {
-  background: #f9fafc;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fa;
   color: #222;
   line-height: 1.6;
 }
 
-/* Hero */
+a {
+  text-decoration: none;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
 .hero {
-  background: linear-gradient(120deg, #0f172a, #1e40af);
-  color: white;
-  padding: 80px 20px;
+  min-height: 500px;
+  padding: 80px 8%;
   display: flex;
   align-items: center;
-  justify-content: center; /* center content horizontally */
-  gap: 40px; /* space between text and image */
-  flex-wrap: wrap; /* wrap on smaller screens */
+  justify-content: space-between;
+  gap: 60px;
+  background: #111827;
+  color: white;
 }
 
 .hero-content {
-  max-width: 550px;
-  text-align: left;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  max-width: 650px;
 }
 
 .hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+  font-size: 60px;
+  margin: 0 0 10px;
+  line-height: 1.1;
 }
 
-.hero p {
-  font-size: 18px;
+.title {
+  font-size: 23px;
+  font-weight: 600;
+  margin: 0 0 20px;
 }
 
 .tagline {
-  margin: 20px 0;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #d1d5db;
   max-width: 600px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .btn {
   display: inline-block;
-  padding: 14px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
+  padding: 13px 22px;
+  border-radius: 7px;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
 .btn.primary {
-  background: #22c55e;
-  color: #000;
+  background: #2563eb;
+  color: white;
 }
 
 .btn.secondary {
-  background: transparent;
-  border: 2px solid #22c55e;
-  color: #22c55e;
+  background: white;
+  color: #111827;
 }
 
-/* Make all images responsive */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+.btn.whatsapp {
+  background: #25d366;
+  color: white;
 }
 
-/* Card images */
-.card img {
+.btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+.hero-image {
+  width: 330px;
+  height: 330px;
+  flex-shrink: 0;
+}
+
+.hero-image img {
   width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 15px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
 }
 
-/* Sections */
-section {
-  max-width: 1000px;
+/* ========================================
+   GENERAL SECTIONS
+======================================== */
+
+.about,
+.skills,
+.projects,
+.contact {
+  max-width: 1100px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 50px 25px;
 }
 
-h2 {
-  margin-bottom: 20px;
-  color: #1e40af;
+.about h2,
+.skills h2,
+.projects h2,
+.contact h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
 .about p {
-  max-width: 700px;
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+  color: #555;
 }
 
-/* Skills */
-.skills ul {
+/* ========================================
+   SKILLS
+======================================== */
+
+.skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.skills li {
+.skill-grid span {
   background: white;
-  padding: 15px;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
 }
 
-/* Projects */
+/* ========================================
+   PROJECTS
+======================================== */
+
 .projects {
-  background: #eef2ff;
+  max-width: 1200px;
+}
+
+.projects h2 {
+  margin-bottom: 25px;
 }
 
 .card {
   background: white;
-  padding: 25px;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 25px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
 }
 
-/* Contact */
-.contact {
+.card img {
+  display: block;
+  width: 100%;
+  max-height: 550px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f1f1f1;
+}
+
+.card h3 {
+  font-size: 25px;
+  margin: 25px 0 15px;
+}
+
+.card p {
+  color: #555;
+  margin: 10px 0;
+}
+
+.card strong {
+  color: #222;
+}
+
+/* ========================================
+   HIRING FORM
+======================================== */
+
+.hire-section {
+  max-width: 850px;
+  margin: 50px auto 80px;
+  padding: 50px 35px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hire-section h2 {
   text-align: center;
+  font-size: 36px;
+  margin: 0 0 10px;
 }
 
+.hire-intro {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 35px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.hire-form {
+  display: grid;
+  gap: 20px;
+}
+
+/* Hire Me Pulse Animation */
 .btn.whatsapp {
-  background: #25d366; /* WhatsApp green */
-  color: white;
-  border: none;
+  animation: pulseHire 0.8s infinite;
 }
 
-.btn.whatsapp:hover {
-  background: #1ebe57; /* darker on hover */
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  background: #0f172a;
-  color: white;
-  padding: 20px;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
+@keyframes pulseHire {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
   }
 
-  .hero-buttons {
-    justify-content: center;
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #222;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #222;
+  background: white;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #25d366;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+.form-group textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.submit-hire {
+  width: 100%;
+  padding: 16px 20px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  background: #25d366;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-hire:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+.form-note {
+  text-align: center;
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact {
+  text-align: center;
+  background: #111827;
+  color: white;
+  max-width: none;
+}
+
+.contact h2 {
+  margin-top: 0;
+}
+
+.contact p {
+  margin: 10px 0;
+  color: #d1d5db;
+}
+
+.contact strong {
+  color: white;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #080d16;
+  color: #aaa;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 800px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 25px;
+    flex-direction: column;
+    text-align: center;
   }
 
   .hero-content {
     max-width: 100%;
   }
 
-  .card img {
-    max-width: 100%;
+  .hero h1 {
+    font-size: 45px;
   }
 
-  h1 {
+  .title {
+    font-size: 19px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about,
+  .skills,
+  .projects,
+  .contact {
+    padding: 40px 20px;
+  }
+
+  .about h2,
+  .skills h2,
+  .projects h2,
+  .contact h2,
+  .hire-section h2 {
+    font-size: 30px;
+  }
+
+  .hire-section {
+    margin: 30px 15px 60px;
+    padding: 35px 20px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card h3 {
+    font-size: 22px;
+  }
+}
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 45px 18px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
     text-align: center;
   }
 
-  .about h2 {
-    text-align: center;
+  .hero-image {
+    width: 210px;
+    height: 210px;
   }
 
-  .skills h2 {
-    text-align: center;
+  .hire-section {
+    padding: 30px 18px;
   }
-  .projects h2 {
-    text-align: center;
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
   }
 }
